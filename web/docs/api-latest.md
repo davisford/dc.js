@@ -1052,6 +1052,11 @@ array (solid line).
 Get or set render area flag. If the flag is set to true then the chart will render the area
 beneath each line and the line chart effectively becomes an area chart.
 
+#### .xyTipsOn([boolean])
+Turn on/off the mouseover behavior on an individual data point which renders a circle and x/y axis
+dashed lines back to each respective axis.  This is ignored if the chart brush is on (i.e. `brushOn` is true).
+Default: true
+
 #### .dotRadius([dotRadius])
 Get or set the radius (in px) for dots displayed on the data points. Default dot radius is 5.
 
