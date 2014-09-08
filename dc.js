@@ -6189,6 +6189,7 @@ dc.rowChart = function (parent, chartGroup) {
 
     var _labelOffsetX = 10;
     var _labelOffsetY = 15;
+    var _labelOffsetYdefault = false;  // if they override this via API
     var _titleLabelOffsetX = 2;
 
     var _gap = 5;
@@ -6321,8 +6322,9 @@ dc.rowChart = function (parent, chartGroup) {
         if (!_fixedBarHeight) height = (_chart.effectiveHeight() - (n + 1) * _gap) / n;
             else height = _fixedBarHeight;
 
-        // vertically align label in center
-        _labelOffsetY = height / 2;
+        // vertically align label in center unless they override the value via API
+        if (_labelOffsetYdefault === false)
+            _labelOffsetY = height / 2;
 
         var rect = rows.attr("transform",function (d, i) {
                 return "translate(0," + ((i + 1) * _gap + i * height) + ")";
@@ -6497,6 +6499,7 @@ dc.rowChart = function (parent, chartGroup) {
     **/
     _chart.labelOffsetY = function (o) {
         if (!arguments.length) return _labelOffsetY;
+        _labelOffsetYdefault = false;
         _labelOffsetY = o;
         return _chart;
     };
