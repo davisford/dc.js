@@ -166,6 +166,9 @@ dc.rowChart = function (parent, chartGroup) {
         if (!_fixedBarHeight) height = (_chart.effectiveHeight() - (n + 1) * _gap) / n;
             else height = _fixedBarHeight;
 
+        // vertically align label in center
+        _labelOffsetY = height / 2;
+
         var rect = rows.attr("transform",function (d, i) {
                 return "translate(0," + ((i + 1) * _gap + i * height) + ")";
             }).select("rect")
