@@ -6189,7 +6189,7 @@ dc.rowChart = function (parent, chartGroup) {
 
     var _labelOffsetX = 10;
     var _labelOffsetY = 15;
-    var _labelOffsetYdefault = false;  // if they override this via API
+    var _labelOffsetYdefault = true;  // if they override this via API
     var _titleLabelOffsetX = 2;
 
     var _gap = 5;
@@ -6323,7 +6323,7 @@ dc.rowChart = function (parent, chartGroup) {
             else height = _fixedBarHeight;
 
         // vertically align label in center unless they override the value via API
-        if (_labelOffsetYdefault === false)
+        if (_labelOffsetYdefault === true)
             _labelOffsetY = height / 2;
 
         var rect = rows.attr("transform",function (d, i) {
