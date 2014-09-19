@@ -219,6 +219,7 @@ dc.rowChart = function (parent, chartGroup) {
             var lab = rows.select("text")
                 .attr("x", _labelOffsetX)
                 .attr("y", _labelOffsetY)
+                .attr("dy", _dyOffset)
                 .on("click", onClick)
                 .attr("class", function (d, i) {
                     return _rowCssClass + " _" + i;
@@ -233,7 +234,6 @@ dc.rowChart = function (parent, chartGroup) {
             var titlelab = rows.select("." + _titleRowCssClass)
                     .attr("x", _chart.effectiveWidth() - _titleLabelOffsetX)
                     .attr("y", _labelOffsetY)
-                    .attr("dy", _dyOffset)
                     .attr("text-anchor", "end")
                     .on("click", onClick)
                     .attr("class", function (d, i) {
