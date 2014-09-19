@@ -6190,6 +6190,7 @@ dc.rowChart = function (parent, chartGroup) {
     var _labelOffsetX = 10;
     var _labelOffsetY = 15;
     var _labelOffsetYdefault = true;  // if they override this via API
+    var _dyOffset = '0.35em';   // this helps center labels https://github.com/mbostock/d3/wiki/SVG-Shapes#svg_text
     var _titleLabelOffsetX = 2;
 
     var _gap = 5;
@@ -6387,6 +6388,7 @@ dc.rowChart = function (parent, chartGroup) {
             var titlelab = rows.select("." + _titleRowCssClass)
                     .attr("x", _chart.effectiveWidth() - _titleLabelOffsetX)
                     .attr("y", _labelOffsetY)
+                    .attr("dy", _dyOffset)
                     .attr("text-anchor", "end")
                     .on("click", onClick)
                     .attr("class", function (d, i) {
