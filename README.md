@@ -1,3 +1,21 @@
+# This Branch Is Special
+It contains my own PR merges (which I usually push back upstream to dc.js), but it also contains final distribution artifacts of `dc.js`, `dc.min.js` from `grunt build` so we can pull it in via bower.
+
+# Changelog
+
+## Merged https://github.com/davisford/dc.js/tree/recalc-clippath-on-redraw
+This recalculates the `<clippath>` on a `chart.redraw()` which helps in a responsive environment
+
+## Merged https://github.com/davisford/dc.js/tree/put-bower-components-in-gitignore
+Self-explanatory
+
+## Merged https://github.com/davisford/dc.js/tree/rowchart-vertically-centered-labels
+This fixes it so row chart labels are always vertically aligned
+
+## Merged https://github.com/davisford/dc.js/tree/optional-linechart-dots-xyrefs
+This adds an API to linechart => chart.xyTipsOn(true | false), which allows you to disable the default behavior on a linechart where it generates tracking dots and xy refs.  I built my own version of this, so I needed a way to disable this default behavior.
+
+
 [![Build Status](https://api.travis-ci.org/dc-js/dc.js.png?branch=master)](http://travis-ci.org/dc-js/dc.js)
 [![Sauce Status](https://saucelabs.com/buildstatus/sclevine)](https://saucelabs.com/u/sclevine)
 [![NPM Status](https://badge.fury.io/js/dc.png)](http://badge.fury.io/js/dc)
